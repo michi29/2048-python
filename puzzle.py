@@ -1,6 +1,7 @@
 import sys
 from tkinter import Frame, Label, CENTER
 import random
+from pyautogui import press, typewrite, hotkey
 
 import logic
 import constants as c
@@ -124,6 +125,10 @@ if sys.argv[1].isdigit():
     c.GRID_LEN = int(sys.argv[1])
 game_grid = GameGrid()
 cm = ControlMechanism()
+
+#press('w')
+#press('w')
+
 print("State Aufruf:\n")
 cm.state()
 print("\nEnde State Aufruf")
