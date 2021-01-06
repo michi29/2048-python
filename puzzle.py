@@ -1,3 +1,4 @@
+import sys
 from tkinter import Frame, Label, CENTER
 import random
 
@@ -91,4 +92,7 @@ class GameGrid(Frame):
         self.matrix[index[0]][index[1]] = 2
 
 
+print(str(sys.argv[1]))
+if sys.argv[1].isdigit():
+    c.GRID_LEN = int(sys.argv[1])
 game_grid = GameGrid()

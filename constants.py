@@ -1,3 +1,7 @@
+
+def setlength(self, new_length):
+    self.GRID_LEN = new_length
+
 SIZE = 400
 GRID_LEN = 4
 GRID_PADDING = 10
