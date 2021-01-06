@@ -224,3 +224,11 @@ def move(game, dir):
     else:
         right(game)
 
+
+def get_biggest_number(mat):
+    max = 0
+    for i in range(c.GRID_LEN):
+        for j in range(c.GRID_LEN - 1):
+            if mat[i][j] > max:
+                max = mat[i][j]
+    return max

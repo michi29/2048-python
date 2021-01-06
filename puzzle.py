@@ -24,14 +24,14 @@ class GameGrid(Frame):
                          c.KEY_LEFT_ALT: logic.left, c.KEY_RIGHT_ALT: logic.right,
                          c.KEY_H: logic.left, c.KEY_L: logic.right,
                          c.KEY_K: logic.up, c.KEY_J: logic.down}
-        
+
         self.grid_cells = []
         self.init_grid()
         self.matrix = logic.new_game(c.GRID_LEN)
         self.history_matrixs = []
         self.update_grid_cells()
 
-        self.mainloop()
+        # self.mainloop()
 
     def init_grid(self):
         background = Frame(self, bg=c.BACKGROUND_COLOR_GAME,
@@ -99,7 +99,29 @@ class GameGrid(Frame):
         self.__init__()
 
 
+class Control():
+    def state(self):
+        print("Aktueller Spielstand")
+        print(game_grid.matrix)
+
+        print("Momentane Punktzahl")
+        print(logic.get_biggest_number(game_grid.matrix))
+
+        print("Spiel beendet?")
+        status = logic.game_state(game_grid.matrix)
+        if status == "not over":
+            print("Spiel nicht vorbei")
+            return False
+        else:
+            print("Spiel vorbei")
+            return True
+
+
 print(str(sys.argv[1]))
 if sys.argv[1].isdigit():
     c.GRID_LEN = int(sys.argv[1])
 game_grid = GameGrid()
+cm = Control()
+print("State Aufruf:\n")
+cm.state()
+print("\nEnde State Aufruf")
