@@ -84,12 +84,19 @@ class GameGrid(Frame):
                 if logic.game_state(self.matrix) == 'lose':
                     self.grid_cells[1][1].configure(text="You", bg=c.BACKGROUND_COLOR_CELL_EMPTY)
                     self.grid_cells[1][2].configure(text="Lose!", bg=c.BACKGROUND_COLOR_CELL_EMPTY)
+        elif key == c.KEY_R:
+            self.reset()
 
     def generate_next(self):
         index = (gen(), gen())
         while self.matrix[index[0]][index[1]] != 0:
             index = (gen(), gen())
         self.matrix[index[0]][index[1]] = 2
+
+    def reset(self):
+        print("RESET GAME")
+        self.destroy()
+        self.__init__()
 
 
 print(str(sys.argv[1]))

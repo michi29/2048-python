@@ -42,3 +42,6 @@ KEY_J = "'j'"
 KEY_K = "'k'"
 KEY_L = "'l'"
 KEY_H = "'h'"
+
+# reset key
+KEY_R = "'r'"
