@@ -213,7 +213,7 @@ def right(game):
     game = reverse(game)
     return game, done
 
-
+# CONTROL
 def move(game, dir):
     if dir == "up":
         up(game)
@@ -224,7 +224,7 @@ def move(game, dir):
     else:
         right(game)
 
-
+# OBSERVE
 def get_biggest_number(mat):
     max = 0
     for i in range(c.GRID_LEN):

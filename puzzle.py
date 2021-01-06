@@ -93,13 +93,15 @@ class GameGrid(Frame):
             index = (gen(), gen())
         self.matrix[index[0]][index[1]] = 2
 
+    # CONTROL
     def reset(self):
         print("RESET GAME")
         self.destroy()
         self.__init__()
 
 
-class Control():
+class ControlMechanism():
+    # OBSERVE
     def state(self):
         print("Aktueller Spielstand")
         print(game_grid.matrix)
@@ -121,7 +123,7 @@ print(str(sys.argv[1]))
 if sys.argv[1].isdigit():
     c.GRID_LEN = int(sys.argv[1])
 game_grid = GameGrid()
-cm = Control()
+cm = ControlMechanism()
 print("State Aufruf:\n")
 cm.state()
 print("\nEnde State Aufruf")
